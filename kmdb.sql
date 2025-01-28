@@ -147,6 +147,47 @@ CREATE TABLE actormoviemapping (
 -- Insert data into your database that reflects the sample data shown above
 -- Use hard-coded foreign key IDs when necessary
 -- TODO!
+INSERT INTO movies(id, movie_name, year_released, mpaa_rating, studio_id)
+VALUES (1, "Batman Begins", 2005, "PG-13", 1), (2, "The Dark Knight", 2008, "PG-13", 1), (3, "The Dark Knight Rises", 2012, "PG-13", 1 );
+
+INSERT INTO studios(id, studio_name)
+VALUES (1, "Warner Bros."), (2,"Sony Pictures");
+
+INSERT INTO actors(id, actor_name) 
+VALUES
+(1, "Christian Bale"),
+(2, "Michael Caine"),
+(3, "Liam Neeson"),
+(4, "Katie Holmes"),
+(5, "Gary Oldman"),
+(6, "Heath Ledger"),
+(7, "Aaron Eckhart"),
+(8, "Maggie Gyllenhaal"),
+(9, "Tom Hardy"),
+(10, "Joseph Gordon-Levitt"),
+(11, "Anne Hathaway");
+
+INSERT INTO actormoviemapping(id, movie_id, actor_id, character_name)
+VALUES
+(1, 1, 1, "Bruce Wayne"),
+(2, 1, 2, "Alfred"),
+(3, 1, 3, "Ra's Al Ghul"),
+(4, 1, 4, "Rachel Dawes"),
+(5, 1, 5, "Commissioner Gordon"),
+(6, 2, 1, "Bruce Wayne"),
+(7, 2, 6, "Joker"),
+(8, 2, 7, "Harvey Dent"),
+(9, 2, 2, "Alfred"),
+(10, 2, 8, "Rachel Dawes"),
+(11, 3, 1, "Bruce Wayne"),
+(12, 3, 5, "Commissioner Gordon"),
+(13, 3, 9, "Bane"),
+(14, 3, 10, "John Blake"),
+(15, 3, 11, "Selina Kyle"),
+(16, 3, 5, "Commissioner Gordon"),
+(17, 3, 9, "Bane"),
+(18, 3, 10, "John Blake"),
+(19, 3, 11, "Selina Kyle");
 
 -- Prints a header for the movies output
 .print "Movies"
