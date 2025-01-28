@@ -183,11 +183,7 @@ VALUES
 (12, 3, 5, "Commissioner Gordon"),
 (13, 3, 9, "Bane"),
 (14, 3, 10, "John Blake"),
-(15, 3, 11, "Selina Kyle"),
-(16, 3, 5, "Commissioner Gordon"),
-(17, 3, 9, "Bane"),
-(18, 3, 10, "John Blake"),
-(19, 3, 11, "Selina Kyle");
+(15, 3, 11, "Selina Kyle");
 
 -- Prints a header for the movies output
 .print "Movies"
@@ -196,6 +192,8 @@ VALUES
 
 -- The SQL statement for the movies output
 -- TODO!
+select movies.id, movies.movie_name, year_released, mpaa_rating, studios.studio_name 
+FROM movies INNER JOIN studios ON movies.studio_id=studios.id;
 
 -- Prints a header for the cast output
 .print ""
@@ -206,3 +204,6 @@ VALUES
 
 -- The SQL statement for the cast output
 -- TODO!
+select actormoviemapping.id, movies.movie_name, actors.actor_name, actormoviemapping.character_name FROM actormoviemapping 
+INNER JOIN movies ON movies.id = actormoviemapping.movie_id
+INNER JOIN actors on actors.id = actormoviemapping.actor_id;
